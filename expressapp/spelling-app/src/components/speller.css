@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Nunito+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Nunito+Sans:wght@300;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+#landing-page{
+    display: flex;
+}
+
+#landing-page-left{
+    display: flex;
+    width: 65vw;
+    height: 100vh;
+    background-color: rgb(45, 49, 66);
+}
+
+#left-image{
+
+}
+
+#landing-page-right{
+    display: flex;
+    width: 35vw;
+    height: 100vh;
+    background-color:rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+}
+
+#landing-page-right-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+#landing-h1{
+    margin-bottom: 20px;
+    /* border: 1px solid black; */
+    color: #2D3142;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+#landing-h3{
+    justify-content: start;
+    margin-bottom: 30px;
+    /* border: 1px solid black; */
+    color: #2D3142;
+}
+#log-in{
+    border-radius: 15px;
+    border: none;
+    width: 300px;
+    padding: 15px;
+    background-color: #ef8354;
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+}
+#sign-up{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #ef8354;
+    color: #ef8354;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+#log-in:hover{
+    background-color: #2D3142;
+}
+#sign-up:hover{
+    background-color: #2D3142;
+    border: 1px solid #2D3142;
+}
+
+/* Sign Up Form*/
+#popout-sign-up-form{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 710px;
+    top: 300px;
+    width: 500px;
+    height: 380px;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+    visibility: hidden;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, .5);
+}
+
+#popout-sign-up-form-container{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#popout-sign-up-form p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: #2D3142;
+}
+
+#popout-sign-up-form-username{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 30px;
+    border: 1px solid rgba(45, 49, 66, 0.3);
+    border-radius: 10px;
+}
+#popout-sign-up-form-username:focus {
+    outline: 10px;
+    border: 2px solid #ef8354;
+}
+
+
+#popout-sign-up-form-password{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 30px; 
+    border: 1px solid rgba(45, 49, 66, 0.3);
+    border-radius: 10px;
+}
+
+#popout-sign-up-form-password:focus{
+    outline: 10px;
+    border: 2px solid #ef8354;
+}
+
+#popout-sign-up-form-password2{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 30px; 
+    border: 1px solid rgba(45, 49, 66, 0.3);
+    border-radius: 10px;
+}
+
+#popout-sign-up-form-password2:focus{
+    outline: 10px;
+    border: 2px solid #ef8354;
+}
+
+#popout-sign-up-form-email{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 30px;
+    border: 1px solid rgba(45, 49, 66, 0.3);
+    border-radius: 10px;
+}
+
+#popout-sign-up-form-email:focus{
+    outline: 10px;
+    border: 2px solid #ef8354;
+}
+
+
+
+#popout-sign-up-form-submit{
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: none;
+    background-color: #ef8354;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+#popout-sign-in-form-submit:hover{
+    background-color: #2D3142;
+}
+
+
+
+/* Sign In Form*/
+#popout-sign-in-form{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 710px;
+    top: 300px;
+    width: 500px;
+    height: 280px;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+    visibility: hidden;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, .5);
+}
+
+#popout-sign-in-form-container{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#popout-sign-in-form p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: #2D3142;
+}
+
+#popout-sign-in-form-username{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 30px;
+    border: 1px solid rgba(45, 49, 66, 0.3);
+    border-radius: 10px;
+}
+#popout-sign-in-form-username:focus {
+    outline: 10px;
+    border: 2px solid #ef8354;
+}
+
+
+#popout-sign-in-form-password{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 30px; 
+    border: 1px solid rgba(45, 49, 66, 0.3);
+    border-radius: 10px;
+}
+
+#popout-sign-up-form-password:focus{
+    outline: 10px;
+    border: 2px solid #ef8354;
+}
+
+
+#popout-sign-in-form-submit{
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: none;
+    background-color: #ef8354;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+#popout-sign-in-form-submit:hover{
+    background-color: #2D3142;
+}
+
+
+#bottom-bar{
+    display: flex;
+    position:absolute;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 35vw;
+    background: #eeeeee;
+    font-size: 15px;
+}
+
+#bottom-bar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#bottom-bar-p{
+    text-align: center;
+    justify-content: center;
+    /* width: 35vw; */
+    margin-left: 50px;
+}
+
+
+
+
+/* Spelling Page */
+
+#spelling-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(45, 49, 66);
+    height: 100vh;
+}
+
+#spelling-container{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 700px;
+    border-radius: 15px;
+    align-items: center;
+    background-color: white;
+
+    text-align: center;
+}
+
+#spelling-title{
+    color:  rgb(45, 49, 66);
+    margin-top: 50px;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+#score{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#instruction{
+    margin-bottom: 20px;
+}
+
+#new-word{
+    position: relative;
+    height: 0;
+    /* negative z index so word can still be read by voice, and not an empty string, but not seen */
+    z-index: -999; 
+}
+
+#input-text{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 300px;
+    height: 75px;
+    font-size: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: gainsboro;
+}
+
+#input-text:focus{
+    
+}
+
+
+
+#start-btn{
+    position: relative;
+    top: -237px;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #ef8354;
+    border: 1px solid #ef8354;
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+}
+#start-btn:hover{
+    background-color: #2D3142;
+    border: 1px solid #2D3142;
+}
+#submit-btn{
+    position: relative;
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #ef8354;
+    border: 1px solid #ef8354;
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+    visibility: hidden;
+}
+#submit-btn:hover{
+    background-color: #2D3142;
+    color: white;
+    border: 1px solid #2D3142;
+}
+
+#styling-line{
+    height: 1px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#speak-btn{
+    position: relative;
+    padding: 15px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #ef8354;
+    color: #ef8354;
+    font-size: 15px;
+    font-weight: 900;
+    visibility: hidden;
+}#speak-btn:hover{
+    color: white;
+    background-color: #2D3142;
+    border: 1px solid #2D3142;
+}
+
+#answer-btn{
+    position: relative;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white  ;
+    border: #ef8354 1px solid;
+    color: #ef8354;
+    font-size: 15px;
+    font-weight: 900;
+    visibility: hidden;
+}
+#answer-btn:hover{
+    background-color: #2D3142;
+    border: #2D3142 1px solid;
+    color: white;
+}
+
+#definition{
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+}
+
+#answer{
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+    color:  rgb(45, 49, 66);
+    font-size: 50px;
+}
+
+/* Dict Page */
+
+#dict-page{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(45, 49, 66);   
+    justify-content: center;
+    align-items: center;
+}
+
+#missed-column{
+    text-align: center; 
+    height: 800px;
+    width: 400px;
+    background-color: white;
+    border: 1px solid black;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#missed-column p{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+#study-column{
+    text-align: center;
+    height: 800px;
+    width: 400px;
+    background-color: white;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#study-column p{
+    margin-top:25px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+#custom-column{
+    text-align: center;
+    height: 800px;
+    width: 400px;
+    background-color: white;
+    border: 1px solid black;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+#custom-column p{
+    margin-top:25px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+#custom-selects{
+    text-align-last: center;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+
+/* Flashcards */
+#flash-card-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(45, 49, 66);   
+    height: 100vh;
+    width: 100vw;
+
+}
+
+#flashcard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:  100%;
+    width: 900px;
+    background-color: white;
+}
+
+#flashcard{
+    position: absolute;
+    position: relative;
+    top: 100px;
+    z-index: 0;
+    height: 400px;
+    width: 700px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+#flashcard-red{
+    border-top: 5px solid rgba(255, 0, 0, 0.2);
+    height: 10px;
+    margin-top: 60px;
+}
+
+#flashcard-blue-1{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+
+#flashcard-blue-2{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-3{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-4{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-4{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-5{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 20px;
+}
+
+#flashcard-blue-6{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-7{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-8{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-blue-9{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+#flashcard-blue-10{
+    border-top: 5px solid rgba(173, 216, 230, 0.3);
+    height: 10px;
+    margin-top: 15px;
+}
+
+#flashcard-definition{
+    position: relative;
+    top: -230px;
+    font-size: 35px;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+#flashcard-voice{
+    position: relative;
+    top: -260px;
+    font-size: 15px;
+    z-index: 1;
+}
+
+#flashcard-input{
+    position: relative;
+    top: -210px;
+    z-index: 9999;
+    text-align: center;
+    width: 300px;
+    height: 75px;
+    font-size: 50px;
+    /* box-shadow: 0 0 20px rgb(0 0 0 / 60%);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 60%);
+    -o-box-shadow: 0 0 20px rgba(0,0,0,0.6); */
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#flashcard-submit{
+    position: relative;
+    top: -220px;
+    padding: 15px;
+    margin-top: 25px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #ef8354;
+    border: 1px solid #ef8354;
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+
+}
