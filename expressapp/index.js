@@ -13,23 +13,28 @@ app.use(express.json());
 app.post("/spellinglist", function (req, res) {
     const list = req.body.spellingList
     console.log(list, 'object')
-    // console.log(req)
+    let spellingArray = []
 
-    // fs.readFile('./words.txt', 'utf-8', function(err, data) {
-    //     if (err) throw err
 
-    //     let spellingArray = JSON.parse(data)
+    fs.readFile('./words.txt', function(err, data) {
+        if (err) throw err
+        console.log(data, 'read data')
+        spellingArray = JSON.parse(data)
+        console.log(spellingArray.dictionary, "dictionary from file")
+        spellingArray.dictionary.push(list)
+        console.log(spellingArray.dictionary, 'spell array')
 
-    // fs.writeFile('./messages.txt', JSON.stringify(spellingArray), 'utf-8',
-    // function(err) {
-    //     if (err) throw err
-    //     console.log('Done')
-    //     })
-    // })
+        fs.writeFile('./words.txt', JSON.stringify({dictionary: spellingArray.dictionary}),
+        function(err) {
+            if (err) throw err
+            console.log('Done')
+
+        })
+    })
 })
 
 
-
+// { dictionary: []}
 
 
 
