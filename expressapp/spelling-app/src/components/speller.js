@@ -8,6 +8,7 @@ export default function SpellingPage() {
   const [score, setScore] = useState(0);
   var randomWords = require("random-words");
   const [displayWord, setDisplayWord] = useState("");
+  const [firstTry, setFirtTry] = useState(true)
 
   const [spellingList, setSpellingList] = useState([
     {
@@ -27,6 +28,8 @@ export default function SpellingPage() {
       body: JSON.stringify({ spellingList: spellingList }),
     };
     fetch(`/spellinglist`, options);
+    setText('')
+    setDisplayWord(randomWords());
   }
 
   const Start = () => {
@@ -54,42 +57,40 @@ export default function SpellingPage() {
 
     // if match
     if (text === document.getElementById("new-word").innerText) {
-      handleSubmit();
-      setText("");
-      setDisplayWord(randomWords());
-
-      // if not match and not first attempt
-
-      setScore(score + 1);
-
-      console.log(spellingList, "sl now");
 
       //Input field resets to white if was red
       document.getElementById("input-text").style.background = "white";
-
       //Hides the button that shows answer
       document.getElementById("answer-btn").style.visibility = "hidden";
       //Hides the  answer
       document.getElementById("answer").style.visibility = "hidden";
-      
+      if (firstTry === true){
+        setDisplayWord(randomWords());
+        setScore(score + 1);
+      }
+      else{
+        handleSubmit();
+      }
 
       // if not match
     } else {
-      //set input field to red
-      document.getElementById("input-text").style.background =
-        "rgb(253, 161, 161)";
-
-      //makes a button visible that can show the answer
-      document.getElementById("answer-btn").style.visibility = "visible";
+      setFirtTry(false)
 
       setSpellingList([
-        ...spellingList,
+
         {
           typo: text,
           word: displayWord,
         },
       ]);
       console.log(spellingList);
+
+      //set input field to red
+      document.getElementById("input-text").style.background =
+        "rgb(253, 161, 161)";
+      //makes a button visible that can show the answer
+      document.getElementById("answer-btn").style.visibility = "visible";
+
     }
   }
 
