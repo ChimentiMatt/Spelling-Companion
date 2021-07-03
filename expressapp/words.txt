@@ -1,1 +1,1 @@
-{"dictionary":[{"typo":"","word":""},{"typo":"","word":""},{"typo":"","word":""},{"typo":"bleed","word":"lead"},{"typo":"blead","word":"lead"}]}
+{"dictionary":[{"typo":"dres","word":"dress"},{"typo":"fet","word":"feet"},{"typo":"observ","word":"observe"}]}

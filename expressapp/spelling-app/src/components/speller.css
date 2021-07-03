@@ -489,12 +489,25 @@
     border-radius: 5px;
 }
 
-#missed-column p{
+#missed-column-p{
     margin-top: 25px;
     margin-bottom: 25px;
     padding-bottom: 25px;
     font-size: 30px;
     border-bottom: 1px solid black;
+}
+
+#misssed-row{
+    display: flex;
+    justify-content: center;
+}
+
+#missed-btn{
+    margin-left: 10px;
+}
+
+#missed-column-data{
+    word-spacing: 10px;
 }
 
 #study-column{
@@ -526,7 +539,7 @@
     border-radius: 5px;
 }
 
-#custom-column p{
+#custom-column-p {
     margin-top:25px;
     margin-bottom: 25px;
     padding-bottom: 25px;
