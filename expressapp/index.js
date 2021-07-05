@@ -56,6 +56,36 @@ app.get("/spellinglist", function (req, res) {
 
 // { dictionary: []}
 
+
+
+//Users
+app.post("/users", function (req, res) {
+    const list = req.body.users
+    console.log(list, 'object')
+    let userArray = []
+
+    fs.readFile('./users.txt', function(err, data) {
+        if (err) throw err
+        console.log(data, 'read data')
+        userArray = JSON.parse(data)
+        console.log(userArray,'*User Array*')
+        list.forEach(element => {
+            userArray.users.push(element)
+        });
+
+        console.log(userArray.users, 'Test')
+
+        fs.writeFile('./user.txt', JSON.stringify({users: userArray.users}),
+        function(err) {
+            if (err) throw err
+            console.log('Done')
+
+        res.send(userArray)
+
+        })
+    })
+})
+
 app.listen(port, () => {
     console.log(`app is listening on host ${port}`)
 })
