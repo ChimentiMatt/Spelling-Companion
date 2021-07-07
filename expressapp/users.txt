@@ -1,1 +1,1 @@
-{"users": []}
+{"users":[{"username":"matt","email":"matthewosu@gmail.com"},{"username":"test1","email":"a@gmail.com"},{"username":"a","email":"a"},{"cat":"cat"},{"username":"4","email":"4"},{"users":"cat"},{"username":"n","email":"n"},{"username":"q","email":"q"},{"username":"p","email":"p"},{"username":"m","email":"m"},{"username":"catssszzz","email":"a"},{"username":"mazz","email":"s"},{"username":"I hate express","email":"1","id":""},{"username":"x","email":"x","id":""},{"username":"a","email":"a","id":"75ed311a-8e7a-43cf-bc35-2124ed29b519"}]}

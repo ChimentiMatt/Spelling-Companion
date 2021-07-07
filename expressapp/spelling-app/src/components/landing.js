@@ -8,21 +8,29 @@ export default function Landing() {
   const [password, setPassword] = useState('')
   const [password2, setPassword2] = useState('')
   const [email, setEmail] = useState('')
-
   const [user, setUser] = useState('')
+  const [id, setId] = useState('')
 
   function HandleSubmitsSignUp(event) {
     event.preventDefault();
     // console.log(username, password, email)
 
-    fetch("/users")
+    console.log(JSON.stringify({users: {username: username, email: email}}))
+    const options = {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({users: {username: username, email: email, id: ''}})
+    }
+    fetch(`/users`, options)
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "data")
         setUser(data.users)
         console.log(data.users, 'obj')
       })
-
   }
 
   // useEffect(() => {
