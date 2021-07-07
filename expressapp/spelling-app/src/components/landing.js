@@ -15,14 +15,14 @@ export default function Landing() {
     event.preventDefault();
     // console.log(username, password, email)
 
-    console.log(JSON.stringify({users: {username: username, email: email}}))
+    console.log(JSON.stringify({users: {username: username, password: password, email: email}}))
     const options = {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({users: {username: username, email: email, id: ''}})
+      body: JSON.stringify({users: {username: username, password: password, email: email, id: ''}})
     }
     fetch(`/users`, options)
       .then((res) => res.json())

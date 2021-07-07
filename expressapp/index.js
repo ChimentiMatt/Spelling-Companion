@@ -4,11 +4,14 @@ const app = express()
 const port = 8000
 const fs = require("fs")
 const { uuid } = require('uuidv4');
+const jwt = require('jsonwebtoken');
+
+const bcrypt = require('bcrypt')
 
 // needed since req is an object!
 var bodyParser = require('body-parser')
 
-var jwt = require('express-jwt');
+
 
 app.use(bodyParser.json() )
 app.use(express.json());  
@@ -59,45 +62,55 @@ app.get("/spellinglist", function (req, res) {
 // { dictionary: []}
 
 //Users
-app.post("/users", function (req, res) {
+app.post("/users", async (req, res) => {
+    try {
+        const salt = await bcrypt.genSalt()
+        const hashedPassword = await bcrypt.hash(req.body.users.password, salt)
+        console.log(salt)
+        console.log(hashedPassword, '!!!!!!!!!!!!!!!!!HASHED!!!!!!!!!!!!!!!!!!!!!!!!')
 
-    let objBody = req.body.users
-    console.log(objBody, 'object')
-    // objBody.push('cat')
-    let userArray = []
+        let objBody = req.body.users
 
-    fs.readFile('./users.txt', function(err, data) {
-        if (err) throw err
-        console.log(data, 'read data')
+        // console.log(objBody, 'object')
+        // objBody.push('cat')
+        let userArray = []
 
-
-
-
-        userArray = JSON.parse(data)
-        console.log(userArray,'*User Array*')
-
-        // objBody.id = uuid()
-        objBody = {...objBody, id: uuid()}
-
-        console.log(objBody)
-        userArray.users.push(objBody)
-
-
-
-
-        // let newData = 'cat'
-        // userArray.users.push({users : newData})
-
-        console.log(userArray.users, 'Test')
-        fs.writeFile('./users.txt', JSON.stringify({users: userArray.users}),
-        function(err) {
+        fs.readFile('./users.txt', function(err, data) {
             if (err) throw err
-            console.log('Done')
+            console.log(data, 'read data')
 
-        res.send(userArray)
 
+
+
+            userArray = JSON.parse(data)
+            console.log(userArray,'*User Array*')
+
+            // objBody.id = uuid()
+            objBody = {...objBody, id: uuid(), password: hashedPassword}
+
+            console.log(objBody)
+            userArray.users.push(objBody)
+
+
+
+
+            // let newData = 'cat'
+            // userArray.users.push({users : newData})
+
+            console.log(userArray.users, 'Test')
+            fs.writeFile('./users.txt', JSON.stringify({users: userArray.users}),
+            function(err) {
+                if (err) throw err
+                console.log('Done')
+
+            res.send(userArray)
+        
+            })
+        
         })
-    })
+    } catch {
+        res.status(500).send()
+    }
 })
 
 app.listen(port, () => {
