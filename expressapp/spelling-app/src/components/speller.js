@@ -14,6 +14,7 @@ export default function SpellingPage() {
     {
       typo: "",
       word: "",
+      id: "",
     },
   ]);
 
@@ -81,6 +82,7 @@ export default function SpellingPage() {
         {
           typo: text,
           word: displayWord,
+          id: ''
         },
       ]);
       console.log(spellingList);

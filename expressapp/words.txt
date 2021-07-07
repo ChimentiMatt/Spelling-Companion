@@ -1,1 +1,1 @@
-{"dictionary":[{"typo":"dres","word":"dress"},{"typo":"fet","word":"feet"},{"typo":"observ","word":"observe"}]}
+{"dictionary":[{"typo":"dres","word":"dress"},{"typo":"fet","word":"feet"},{"typo":"observ","word":"observe"},{"typo":"","word":"master"},{"typo":"","word":"smooth"},{"typo":"cats","word":"folks","id":""}]}

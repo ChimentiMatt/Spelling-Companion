@@ -8,6 +8,8 @@ const { uuid } = require('uuidv4');
 // needed since req is an object!
 var bodyParser = require('body-parser')
 
+var jwt = require('express-jwt');
+
 app.use(bodyParser.json() )
 app.use(express.json());  
 
@@ -33,10 +35,10 @@ app.post("/spellinglist", function (req, res) {
             console.log('Done')
 
         res.send(spellingArray)
-
         })
     })
 })
+
 app.get("/spellinglist", function (req, res) {
     const list = req.body.spellingList
     console.log(list, 'object')

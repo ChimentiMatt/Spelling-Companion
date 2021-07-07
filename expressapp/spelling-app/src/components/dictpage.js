@@ -8,9 +8,9 @@ export default function DictPage() {
     fetch("/spellinglist")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "data");
+        // console.log(data, "data");
         setWords(data.dictionary);
-        console.log(data.dictionary, "d.d");
+        // console.log(data.dictionary, "d.d");
       });
   }, []);
 
