@@ -6,7 +6,22 @@ const fs = require("fs");
 const { uuid } = require("uuidv4");
 const jwt = require("jsonwebtoken");
 
+const secret = require('./secrets.js')
+
 const bcrypt = require("bcrypt");
+
+const mongoose = require('mongoose')
+
+mongoose.connect(`mongodb+srv://${secret}cluster0.diafp.mongodb.net/spellingdb`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+})
+
+
+
+
 
 // needed since req is an object!
 var bodyParser = require("body-parser");
@@ -126,6 +141,13 @@ app.post("/users", async (req, res) => {
 //     }
 //   });
 // }
+
+mongoose.connect('mongodb://localhost/spellingdb', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+})
 
 app.listen(port, () => {
   console.log(`app is listening on host ${port}`);
